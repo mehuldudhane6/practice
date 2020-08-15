@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+
+    <style>
+        .outer_cont {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: violet;
+            height: 100vh;
+        }
+
+        .submit-btn {
+            width: 40%;
+            margin-left: 30%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row outer_cont">
+
+            <div class="col-5 bg-danger " style="height:60%">
+                <div class="form-group mt-2">
+                    <label for="user" style="font-size:20px;">Username</label>
+                    <input class="form-control" placeholder="enter username" id="user" type="text">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="pass" style="font-size:20px;">Password</label>
+                    <input class="form-control" placeholder="enter password" type="password" id="pass">
+                </div>
+                <div class="form-group form-check mt-2">
+                    <input class="form-check-input" type="checkbox" id="check">
+                    <label class="form-check-label" for="check">Remember me</label>
+                </div>
+                <div class="form-group form-check mt-2">
+                    <button class="btn btn-sm btn-primary submit-btn" onclick="submit1()">Submit</button>
+
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" id="id1"></textarea>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function submit1() {
+            let a = document.getElementById("user").value;
+            let b = document.getElementById("pass").value;
+            document.getElementById("id1").innerHTML = `name: ${a} \n password: ${b}`
+        }
+    </script>
+</body>
+
+</html>

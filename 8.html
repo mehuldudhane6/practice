@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+
+    <style>
+        /* .mehul {
+            visibility: hidden;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row bg-dark">
+            <div class="col-3 d-flex justify-content-center align-items-center text-light"
+                style="font-size:20px; font-weight: bold;">Instagram</div>
+            <div class="col-6 ">
+                <div class="form-group d-flex mt-3">
+                    <input type="text" class="form-control" id="id1" placeholder="  Add Your Comment Here ">
+                    <div class="btn  btn-dark btn-outline-primary text-light" style="width:20%" onlick="handlepost()">
+                        post</div>
+                </div>
+            </div>
+            <div class="col-3 "></div>
+        </div>
+        <div class="row mt-3 justify-content-center align-items-center" style="height:200px;">
+            <div class="col-6 mehul text-light bg-dark d-flex justify-content-center align-items-center" id="dear"
+                style="height:80% ;font-weight:bold ; font-size:25px">No post Available</div>
+        </div>
+    </div>
+</body>
+<script>
+    function handlepost() {
+        let userpost = document.getElementById(id1).value;
+        let newEle = document.createElement("div");
+        let inputbox1 = document.createElement("div");
+        inputbox1.innerHTML = userpost;
+        inputbox1.style.display = "flex";
+        inputbox1.style.justifyContent = "center";
+        inputbox1.style.alignItems = "center";
+        newEle.appendChild(inputbox1);
+        let cmt = document.getElementById("dear");
+        cmt.appendChild(newEle);
+
+        //  let inputbox2=document.createElement("div");
+        //  let child1=document.createElement("div");
+
+
+    }
+</script>
+
+</html>

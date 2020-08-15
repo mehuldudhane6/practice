@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>someone posted something</div>
+    <div><input id="input1" type="text"></div>
+    <div class="id1" style="display: flex; margin-top: 5px;">
+        <button id="like" onclick="handleLikes()">Like</button>
+        <button onclick="handlecomment()">Comment</button>
+    </div>
+    <div id="commentbox">
+        <div id="id3">sample</div>
+    </div>
+
+</body>
+<script>
+    let counter = 0;
+    function handleLikes() {
+        let a = document.getElementById("like");
+        counter++;
+        a.innerHTML = "like" + counter;
+    }
+    function handlecomment() {
+        let usercmt = document.getElementById("input1").value;
+
+        let newEle = document.getElementById("id3").cloneNode(true);
+        let cmt = document.getElementById("commentbox");
+        newEle.innerHTML = usercmt;
+        cmt.insertBefore(newEle, cmt.firstChild);
+
+    }
+
+</script>
+
+</html>

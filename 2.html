@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+
+    <style>
+        .row2 {
+            border: 1px solid;
+        }
+
+        .btn {
+            margin-left: 15%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row row1 justify-content-center align-items-center" style="height:300px;">
+            <div class="col-7 bg-primary" style="height:80%;">
+                <div class="row justify-content-center align-items-center text-light" style="height:40%">Add Grocery
+                    Items</div>
+                <div class="form-group">
+                    <input class="form-control" id="input1" placeholder="enter grocery items" type="text">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-success " style="width:70%" onclick="submit1()">submit</button>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-1  justify-content-center align-items-center" style="height:350px;">
+            <div class="col-7 row2 bg-white" style="height:90%;">
+                <div class="row justify-content-center align-items-center text-primary"
+                    style="height:30%; font-size:20px; font-weight: bold; ">Grocery Items</div>
+
+                <div class="row mt-1" id="commentbox">
+                    <div class="col-12 d-flex flex-row justify-content-between" style="visibility:hidden" id="id1">
+                        <div class="col-6 ">mehul</div>
+                        <button class="btn btn-sm btn-primary " onclick="deletecmt(this)">Delete</button>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+        <script>
+            // function submit1() {
+            //     let a = document.getElementById("input1").value;
+
+            //     let newEle = document.createElement("div");
+            //     newEle.style.background = "yellow";
+            //     newEle.style.color = "black";
+            //     newEle.style.display = "flex";
+            //     newEle.style.visibility = "visible";
+            //     newEle.style.justifyContent = "space-between";
+            //     let child1 = document.createElement("div");
+            //     child1.textContent = a;
+            //     let child2 = document.createElement("div");
+            //     child2.innerHTML = "delete";
+            //     newEle.appendChild(child1);
+            //     newEle.appendChild(child2);
+
+            //     let hashtag = document.getElementById("commentbox");
+            //     hashtag.insertBefore(newEle, hashtag.firstChild);
+            // }
+
+            function submit1() {
+                let a = document.getElementById("input1").value;
+                let newEle = document.getElementById("id1").cloneNode(true);
+                newEle.removeAttribute("id");
+                newEle.style.visibility = "visible";
+                newEle.style.margin = "4px";
+                newEle.children[0].innerHTML = a;
+                const commentbox = document.getElementById("commentbox");
+                commentbox.insertBefore(newEle, commentbox.firstChild);
+                document.getElementById("input1").value = "";
+            }
+
+            function deletecmt(btn) {
+                btn.parentElement.remove();
+
+            }
+
+
+        </script>
+</body>
+
+</html>

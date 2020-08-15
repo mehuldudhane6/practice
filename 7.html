@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="id1" style="display:flex; justify-content: center; align-items: center; height:100vh">
+        <div class="id2" style="height:50%;">
+            <button id="id3" onmouseout="handleoutcolor()" onmouseover="handlecolor()">mehul</button>
+        </div>
+    </div>
+</body>
+<script>
+    function handlecolor() {
+        let a = document.getElementById("id3");
+        a.style.background = "yellow";
+        a.style.color = "white";
+
+    }
+    function handleoutcolor() {
+        let a = document.getElementById("id3");
+        a.style.background = "tomato";
+        a.style.color = "white";
+
+    }
+</script>
+
+</html>

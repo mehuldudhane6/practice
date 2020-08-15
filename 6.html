@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>some posted somethig</div>
+    <input type="text" id="id1">
+    <div><button id="id2" onclick="handlelike()">like</button>
+        <button id="id3" onclick="handlecomment()">comment</button></div>
+    <div id="commentbox">
+        <div id="refid" style="display:flex; justify-content: space-between; margin:3px; visibility:hidden;">
+            <div>sample coment</div>
+            <div><button id="del" onclick="deleteaction(this)">delete</button></div>
+        </div>
+    </div>
+</body>
+<script>
+    let counter = 0
+    function handlelike() {
+        let a = document.getElementById("id2");
+        counter = counter + 1;
+        a.innerHTML = "Like" + counter;
+    }
+
+    // function handlecomment() {
+    //     let usercmt = document.getElementById("id1").value;
+    //     let newEle = document.createElement("div");
+    //     newEle.innerHTML = usercmt;
+    //     let cmt = document.getElementById("commentbox");
+    //     cmt.insertBefore(newEle, cmt.firstChild);
+    //     document.getElementById("id1").value = "";
+    // }
+
+    function handlecomment() {
+        let cmt = document.getElementById("id1").value;
+        let newEle = document.getElementById("refid").cloneNode(true);
+        newEle.removeAttribute("refid");
+        newEle.style.visibility = "visible";
+        newEle.style.background = "yellow";
+        newEle.children[0].innerHTML = cmt;
+        let cmtbox = document.getElementById("commentbox");
+        cmtbox.insertBefore(newEle, cmtbox.firstChild);
+        document.getElementById("id1").value = "";
+    }
+
+    function deleteaction(btnele) {
+        btnele.parentElement.parentElement.remove();
+    }
+</script>
+
+</html>
